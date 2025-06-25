@@ -51,29 +51,49 @@
 # df.to_excel(r"C:\Users\Lucas Santos\OneDrive\Desktop\ProjetoPython\Projeto Vinted\Usuarios_Vinted_ok.xlsx", index=False)
 
 
+# import pandas as pd
+# import numpy as np
+# from tabulate import tabulate
+
+# df = pd.read_excel(r"C:\Users\Lucas Santos\OneDrive\Documentos\produtos.xlsx")
+
+
+# # print(tabulate(df_false, headers= 'keys', tablefmt= 'grid'))
+
+# ids3 = [299,15,92,99,204,21]
+# cat = ['Blusas','Casacos','Blusas','Casacos','Blusas', 'Blusas']
+
+
+# df.loc[(df['id_usuario'].isin(ids3)) & (df['categoria'] == False), 'categoria'] = cat
+
+# df_false = df.loc[df['categoria'] == False]
+
+
+# ids4 = [171,94,289,33,154,73,213,22,139,81,260,11,182]
+# cat_2 = ['Blusas','Casacos','Blusas','Casacos','Blusas', 'Blusas', 'Blusas','Casacos','Blusas','Casacos','Blusas', 'Blusas', 'Blusas']
+
+# # df.loc[(df['id'].isin(ids_2)) & (df['nome_completo'] == False), 'nome_completo'] = nomes2
+# df.loc[(df['id_usuario'].isin(ids4)) & (df['categoria'] == False), 'categoria'] = cat_2
+# print(tabulate(df, headers= 'keys', tablefmt= 'grid'))
+
+# df.to_excel(r"C:\Users\Lucas Santos\OneDrive\Documentos\produtos.xlsx")
+
+
 import pandas as pd
 import numpy as np
 from tabulate import tabulate
 
-df = pd.read_excel(r"C:\Users\Lucas Santos\OneDrive\Documentos\produtos.xlsx")
+df2 = pd.read_excel(r"C:\Users\Lucas Santos\OneDrive\Documentos\transacoes2.xlsx")
 
 
-# print(tabulate(df_false, headers= 'keys', tablefmt= 'grid'))
-
-ids3 = [299,15,92,99,204,21]
-cat = ['Blusas','Casacos','Blusas','Casacos','Blusas', 'Blusas']
+df2.loc[df2['forma_pagamento'] == False]
 
 
-df.loc[(df['id_usuario'].isin(ids3)) & (df['categoria'] == False), 'categoria'] = cat
 
-df_false = df.loc[df['categoria'] == False]
+df2.loc[:399, 'forma_pagamento'] = df2.loc[:399, 'forma_pagamento'].replace(False, 'cartao de credito')
 
 
-ids4 = [171,94,289,33,154,73,213,22,139,81,260,11,182]
-cat_2 = ['Blusas','Casacos','Blusas','Casacos','Blusas', 'Blusas', 'Blusas','Casacos','Blusas','Casacos','Blusas', 'Blusas', 'Blusas']
+df2.loc[400:799, 'forma_pagamento'] = df2.loc[400:799, 'forma_pagamento'].replace(False, 'cartao de debito')
+print(tabulate(df2, headers= 'keys', tablefmt= 'prety'))
 
-# df.loc[(df['id'].isin(ids_2)) & (df['nome_completo'] == False), 'nome_completo'] = nomes2
-df.loc[(df['id_usuario'].isin(ids4)) & (df['categoria'] == False), 'categoria'] = cat_2
-print(tabulate(df, headers= 'keys', tablefmt= 'grid'))
-
-df.to_excel(r"C:\Users\Lucas Santos\OneDrive\Documentos\produtos_ok.xlsx")
+df2.to_excel(r"C:\Users\Lucas Santos\OneDrive\Documentos\trasacoes_ok.xlsx")
