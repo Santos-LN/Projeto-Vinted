@@ -80,7 +80,7 @@ O dashboard final permite uma análise dinâmica e interativa dos seguintes pont
 - Filtros por mês, forma de pagamento, vendedor, comprador, etc.
 
 > ✅ **Imagem do dashboard:**
-*![image](https://github.com/user-attachments/assets/97089c83-5567-49c6-97af-2826502568e8)
+*![image](https://github.com/user-attachments/assets/570bfde9-3f6a-4763-ba82-09fe001bd830)
 *
 
 ---
